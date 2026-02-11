@@ -13,7 +13,7 @@ EOT
   type = map(object({
     datadog_monitor_id        = string
     enterprise_application_id = string
-    name                      = optional(string, "default")
+    name                      = optional(string) # Default: "default"
     single_sign_on            = optional(string)
     single_sign_on_enabled    = optional(string)
   }))
