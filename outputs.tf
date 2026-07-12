@@ -1,3 +1,7 @@
+output "datadog_monitor_sso_configurations_id" {
+  description = "Map of id values across all datadog_monitor_sso_configurations, keyed the same as var.datadog_monitor_sso_configurations"
+  value       = { for k, v in azurerm_datadog_monitor_sso_configuration.datadog_monitor_sso_configurations : k => v.id }
+}
 output "datadog_monitor_sso_configurations_datadog_monitor_id" {
   description = "Map of datadog_monitor_id values across all datadog_monitor_sso_configurations, keyed the same as var.datadog_monitor_sso_configurations"
   value       = { for k, v in azurerm_datadog_monitor_sso_configuration.datadog_monitor_sso_configurations : k => v.datadog_monitor_id }
