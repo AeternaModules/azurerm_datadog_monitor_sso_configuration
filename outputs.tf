@@ -22,8 +22,4 @@ output "datadog_monitor_sso_configurations_single_sign_on" {
   description = "Map of single_sign_on values across all datadog_monitor_sso_configurations, keyed the same as var.datadog_monitor_sso_configurations"
   value       = { for k, v in azurerm_datadog_monitor_sso_configuration.datadog_monitor_sso_configurations : k => v.single_sign_on if v.single_sign_on != null && length(v.single_sign_on) > 0 }
 }
-output "datadog_monitor_sso_configurations_single_sign_on_enabled" {
-  description = "Map of single_sign_on_enabled values across all datadog_monitor_sso_configurations, keyed the same as var.datadog_monitor_sso_configurations"
-  value       = { for k, v in azurerm_datadog_monitor_sso_configuration.datadog_monitor_sso_configurations : k => v.single_sign_on_enabled if v.single_sign_on_enabled != null && length(v.single_sign_on_enabled) > 0 }
-}
 
